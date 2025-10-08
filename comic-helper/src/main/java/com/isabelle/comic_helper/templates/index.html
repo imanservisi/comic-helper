@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Comic Helper</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Comic Helper</h1>
+		<div>
+			Hello comic Controller
+		</div>
+		<div>
+			<form action="#" th:action="@{/comics}" th:object="${comics}" method="post">
+			  <div class="mb-3">
+			    <label for="comicTitle" class="form-label">Nom Série</label>
+			    <input type="text" class="form-control" id="comicTitle" aria-describedby="comicTitle">
+			   
+			  </div>
+				<div class="mb-3">
+					<label for="volumeNumber" class="form-label">N° du volume</label>
+					<input type="number" class="form-control" id="volumeNumber">
+				</div>
+  
+				<button type="submit" class="btn btn-primary">Ajouter</button>
+			</form>
+		</div>
+		
+	</div>
+</body>
+</html>
