@@ -12,11 +12,12 @@
 			  <div class="mb-3">
 			    <label for="comicTitle" class="form-label">Nom Série</label>
 			    <input th:field="*{comicName}" type="text" class="form-control" id="comicTitle" aria-describedby="comicTitle">
-			   
+			   	<div th:if="${#fields.hasErrors('comicName')}" th:errors="*{comicName}" class="text-danger"></div>
 			  </div>
 				<div class="mb-3">
 					<label for="volumeNumber" class="form-label">N° du volume</label>
 					<input th:field="*{comicVolume}" type="number" class="form-control" id="volumeNumber">
+					<div th:if="${#fields.hasErrors('comicVolume')}" th:errors="*{comicVolume}" class="text-danger"></div>
 				</div>
   
 				<button type="submit" class="btn btn-primary">Ajouter</button>

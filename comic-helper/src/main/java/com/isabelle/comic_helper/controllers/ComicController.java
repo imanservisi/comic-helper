@@ -38,7 +38,7 @@ public class ComicController {
 		if (bindingResult.hasErrors()) {
 			List<Comic> comics = comicRepository.findAll();
 			model.addAttribute("comics", comics);
-			model.addAttribute("comic", new Comic()); // Ajout de l'objet Comic pour le formulaire
+			// On ne recrée pas un nouvel objet Comic, on garde celui qui contient les erreurs
 			return "index";
 		} else {
 			comic.setDateCreation(LocalDateTime.now());
