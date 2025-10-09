@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ComicHelperApplication<comic-helper>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.isabelle.comic_helper.ComicHelperApplication",
+            "projectName": "comic-helper",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

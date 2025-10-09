@@ -2,12 +2,13 @@ package com.isabelle.comic_helper.entity;
 
 import java.time.LocalDateTime;
 
-import org.springframework.lang.NonNull;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Comic {
@@ -16,12 +17,13 @@ public class Comic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long comicId;
     
-    @NonNull
+    @NotBlank(message = "Le titre est impératif")
     private String comicName;
     
     private LocalDateTime dateCreation;
     
-    @NonNull
+    @NotNull(message = "Le volume est impératif")
+    @PositiveOrZero(message = "Le volume doit être un nombre positif ou zéro")
     private Long comicVolume;
 
     public Comic() {
