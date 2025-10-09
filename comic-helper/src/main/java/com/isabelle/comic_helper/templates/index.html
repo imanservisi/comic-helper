@@ -6,23 +6,39 @@
 <body>
 	<div class="container">
 		<h1>Comic Helper</h1>
+		
 		<div>
-			Hello comic Controller
-		</div>
-		<div>
-			<form action="#" th:action="@{/comics}" th:object="${comics}" method="post">
+			<form action="#" th:action="@{/}" th:object="${comic}" method="post">
 			  <div class="mb-3">
 			    <label for="comicTitle" class="form-label">Nom Série</label>
-			    <input type="text" class="form-control" id="comicTitle" aria-describedby="comicTitle">
+			    <input th:field="*{comicName}" type="text" class="form-control" id="comicTitle" aria-describedby="comicTitle">
 			   
 			  </div>
 				<div class="mb-3">
 					<label for="volumeNumber" class="form-label">N° du volume</label>
-					<input type="number" class="form-control" id="volumeNumber">
+					<input th:field="*{comicVolume}" type="number" class="form-control" id="volumeNumber">
 				</div>
   
 				<button type="submit" class="btn btn-primary">Ajouter</button>
 			</form>
+		</div>
+		<div>
+			<h2>Liste de mes BDs</h2>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Nom Série</th>
+			      <th scope="col">Volume</th>
+			      
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="comic : ${comics}">
+			      <th th:text="${comic.comicName}">Nom Série</th>
+			      <td th:text="${comic.comicVolume}">Volume</td>
+			    </tr>
+			  </tbody>
+			</table>
 		</div>
 		
 	</div>

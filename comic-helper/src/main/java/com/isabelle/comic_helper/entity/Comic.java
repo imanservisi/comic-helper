@@ -1,6 +1,8 @@
 package com.isabelle.comic_helper.entity;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
+import org.springframework.lang.NonNull;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,8 +15,13 @@ public class Comic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long comicId;
+    
+    @NonNull
     private String comicName;
-    private Date dateCreation;
+    
+    private LocalDateTime dateCreation;
+    
+    @NonNull
     private Long comicVolume;
 
     public Comic() {
@@ -43,15 +50,15 @@ public class Comic {
         this.comicName = comicName;
     }
 
-    public Date getDateCreation() {
-        return this.dateCreation;
-    }
+    public LocalDateTime getDateCreation() {
+		return dateCreation;
+	}
 
-    public void setDateCreation(Date dateCreation) {
-        this.dateCreation = dateCreation;
-    }
+	public void setDateCreation(LocalDateTime dateCreation) {
+		this.dateCreation = dateCreation;
+	}
 
-    public Long getComicVolume() {
+	public Long getComicVolume() {
         return this.comicVolume;
     }
 
